@@ -20,10 +20,302 @@
 
 配置完成之后点击 `my-app-mcp-server` 上方的启动按钮，这时你的 Web 应用的 MCP Server 就启动了。
 
-然后打开 VSCode Copilot AI 对话框，切换到 Agent 模式，在输入框中输入“帮我选中员工数最多的公司”，这时 AI 就会调用你的 Web 应用中定义的 MCP 工具，操作你的 Web 应用，选中公司列表中员工数最多的公司。
+![](../assets/images/vscode-copilot/1.png)
 
-待截图
+然后打开 VSCode Copilot AI 对话框，切换到 Agent 模式。
+
+![](../assets/images/vscode-copilot/2.png)
+
+在输入框中输入“帮我选中员工数最多的公司”，这时 AI 就会调用你的 Web 应用中定义的 MCP 工具，操作你的 Web 应用，选中公司列表中员工数最多的公司。
+
+![](../assets/images/vscode-copilot/3.png)
 
 ## Cursor
 
+下载软件
+
+![](../assets/images/cursor/1.png)
+
+在Cursor中配置mcp servers
+
+ctrl + L 弹出AI对话框，点击设置按钮进行设置
+
+![](../assets/images/cursor/2.png)
+
+继续按照下面的步骤手动添加 mcp servers
+
+![](../assets/images/cursor/3.png)
+
+查看mcp是否配置成功并且进行验证
+
+![](../assets/images/cursor/4.png)
+
+新建会话，选择mcp智能体
+
+![](../assets/images/cursor/5.png)
+
+验证成功
+
+![](../assets/images/cursor/6.png)
+
+## Windsurf
+
+下载软件
+
+![](../assets/images/windsurf/1.png)
+
+在Windsurf中配置mcp servers
+
+找到windsurf对话框上方的锤子按钮 -> Configure
+
+![](../assets/images/windsurf/2.png)
+
+配置mcp_config.json*文件，格式如图
+
+![](../assets/images/windsurf/3.png)
+
+点击Refresh会出现我们的mcp servers
+
+![](../assets/images/windsurf/4.png)
+
+![](../assets/images/windsurf/5.png)
+
+验证成功
+
+![](../assets/images/windsurf/6.png)
+
+## Trae
+
+下载软件
+
+![](../assets/images/trae/1.png)
+
+在Trae中配置mcp servers
+
+ctrl + u 弹出AI对话框，找到AI功能管理中的AI功能管理按钮
+
+![](../assets/images/trae/2.png)
+
+继续按照下面的步骤手动添加 mcp servers
+
+![](../assets/images/trae/3.png)
+
+手动配置格式如图
+
+![](../assets/images/trae/4.png)
+
+查看mcp是否配置成功并且进行验证
+
+![](../assets/images/trae/5.png)
+
+新建会话，选择mcp智能体
+
+![](../assets/images/trae/6.png)
+
+![](../assets/images/trae/7.png)
+
+![](../assets/images/trae/8.png)
+
+验证成功
+
+![](../assets/images/trae/9.png)
+
+## Cherry Studio
+
+下载软件
+
+![](../assets/images/cherry-studio/1.png)
+
+选择助手
+
+![](../assets/images/cherry-studio/2.png)
+
+![](../assets/images/cherry-studio/3.png)
+
+在 Cherry Studio配置mcp servers
+
+配置mcp，格式如图
+
+![](../assets/images/cherry-studio/4.png)
+
+![](../assets/images/cherry-studio/5.png)
+
+![](../assets/images/cherry-studio/6.png)
+
+![](../assets/images/cherry-studio/7.png)
+
+配置模型
+
+![](../assets/images/cherry-studio/8.png)
+
+注册登录账号，选择一个适合自己的模型，成功后如下图
+
+![](../assets/images/cherry-studio/9.png)
+
+在对话框中进行验证
+
+![](../assets/images/cherry-studio/10.png)
+
+![](../assets/images/cherry-studio/11.png)
+
+## Cline
+
+vscode下载Cline 插件
+
+![](../assets/images/cline/1.png)
+
+用github账号进行登录
+
+在cline中配置mcp servers
+
+![](../assets/images/cline/2.png)
+
+会自动生成下面的文件
+
+![](../assets/images/cline/3.png)
+
+![](../assets/images/cline/4.png)
+
+智能体选中agent然后进行验证
+
+![](../assets/images/cline/5.png)
+
+![](../assets/images/cline/6.png)
+
+验证成功
+
+![](../assets/images/cline/7.png)
+
+## 通义灵码
+
+下载 IDE 软件
+
+![](../assets/images/lingma/1.png)
+
+![](../assets/images/lingma/2.png)
+
+![](../assets/images/lingma/3.png)
+
+在通义灵码中配置mcp servers
+
+Ctrl + Shift + L 弹出AI对话框，找到AI功能管理中的AI功能管理按钮
+
+![](../assets/images/lingma/4.png)
+
+继续按照下面的步骤手动添加 mcp servers
+
+![](../assets/images/lingma/5.png)
+
+手动配置格式如图
+
+![](../assets/images/lingma/6.png)
+
+查看mcp是否配置成功并且进行验证
+
+![](../assets/images/lingma/7.png)
+
+新建会话，选择智能体
+
+![](../assets/images/lingma/8.png)
+
+验证成功
+
+![](../assets/images/lingma/9.png)
+
 ## Dify
+
+进入dify官网，登录后点击打开网页版并进行登录注册
+
+![](../assets/images/dify/1.png)
+
+![](../assets/images/dify/2.png)
+
+在 Dify 中配置mcp servers
+
+创建Chatflow空白应用
+
+![](../assets/images/dify/3.png)
+
+![](../assets/images/dify/4.png)
+
+新建agent智能体
+
+![](../assets/images/dify/5.png)
+
+设置 AGENT 策略
+
+![](../assets/images/dify/6.png)
+
+![](../assets/images/dify/7.png)
+
+![](../assets/images/dify/8.png)
+
+设置模型
+
+![](../assets/images/dify/9.png)
+
+![](../assets/images/dify/10.png)
+
+![](../assets/images/dify/11.png)
+
+![](../assets/images/dify/12.png)
+
+MCP 服务配置
+
+![](../assets/images/dify/13.png)
+
+查看运行是否成功
+
+![](../assets/images/dify/14.png)
+
+进行发布
+
+![](../assets/images/dify/15.png)
+
+![](../assets/images/dify/16.png)
+
+运行这个编排任务
+
+![](../assets/images/dify/17.png)
+
+验证这个任务
+
+![](../assets/images/dify/18.png)
+
+验证成功
+
+![](../assets/images/dify/19.png)
+
+![](../assets/images/dify/20.png)
+
+## Coze
+
+进入 coze 官网，登录后点击打开网页版
+
+![](../assets/images/coze/1.png)
+
+在 coze 中配置mcp servers
+
+添加管理工具
+
+![](../assets/images/coze/2.png)
+
+添加自定义管理工具
+
+![](../assets/images/coze/3.png)
+
+![](../assets/images/coze/4.png)
+
+查看是否添加成功（如下图）
+
+![](../assets/images/coze/5.png)
+
+进行验证
+
+![](../assets/images/coze/6.png)
+
+![](../assets/images/coze/7.png)
+
+![](../assets/images/coze/8.png)
+
+![](../assets/images/coze/9.png)
