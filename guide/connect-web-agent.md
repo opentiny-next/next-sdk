@@ -8,7 +8,7 @@ WebAgent 是 OpenTiny 推出的统一管理受控端应用和遥控端应用的�
 
 **1. 注册并登录**
 
-![alt text](images/WebAgent1.png)
+![alt text](../assets/images/webAgent/WebAgent1.png)
 
 a. 打开： https://agent.opentiny.design/
 
@@ -24,21 +24,21 @@ a. 点击顶部菜单项：应用管理，跳转到应用管理页面
 
 b. 点击创建应用，进入创建应用流程。
 
-![alt text](images/WebAgent2.png)
+![alt text](../assets/images/webAgent/WebAgent2.png)
 
 c. 选择桌面应用
 
-![alt text](images/WebAgent3.png)
+![alt text](../assets/images/webAgent/WebAgent3.png)
 
 d. 输入应用名称，点击下一步
 
-![alt text](images/WebAgent4.png)
+![alt text](../assets/images/webAgent/WebAgent4.png)
 
 
 
 e. 输入三个重定向 uri。
 
-![alt text](images/WebAgent5.png)
+![alt text](../assets/images/webAgent/WebAgent5.png)
 
 解释：
 
@@ -48,27 +48,27 @@ e. 输入三个重定向 uri。
 
 f. 输入操控端回调 uri (选填)。
 
-![alt text](images/WebAgent6.png)
+![alt text](../assets/images/webAgent/WebAgent6.png)
 
 `http://localhost:6274/oauth/callback` 表示我们的应用允许被 `http://localhost:6274` 的操控端操控。
 
 g. 输入 scope，然后点击下一步
 
-![alt text](images/WebAgent7.png)
+![alt text](../assets/images/webAgent/WebAgent7.png)
 
 scope 输入为 `mcp:web`
 
 h. 点击下一步
 
-![alt text](images/WebAgent8.png)
+![alt text](../assets/images/webAgent/WebAgent8.png)
 
 i. 勾选 我已仔细检查 xxxx，点击创建应用
 
-![alt text](images/WebAgent9.png)
+![alt text](../assets/images/webAgent/WebAgent9.png)
 
 j. 复制 clientId
 
-![alt text](images/WebAgent10.png)
+![alt text](../assets/images/webAgent/WebAgent10.png)
 
 k. 修改项目中的相关配置, 详情参考 创建 WebMcpClient，并与 WebAgent 连接
 
