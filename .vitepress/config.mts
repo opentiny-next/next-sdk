@@ -24,7 +24,6 @@ export default defineConfig({
           text: '指引',
           items: [
             { text: '远程连接 WebAgent 服务器', link: '/guide/connect-web-agent' },
-            { text: 'WebAgent 应用注册', link: '/guide/web-agent-register' },
             { text: '通过 MCP Host 操控 Web 应用', link: '/guide/mcp-host' },
             { text: 'Electron 应用接入', link: '/guide/electron' },
             { text: 'uni-app 应用接入', link: '/guide/uni-app' },
