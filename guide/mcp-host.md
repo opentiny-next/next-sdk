@@ -6,83 +6,86 @@
 
 ## VSCode Copilot
 
-在 VSCode 软件中打开你的项目工程，在项目根目录增加 `.vscode` 文件夹，里面添加一个 `mcp.json` 文件，在该文件中加入以下内容：
+a. 在 VSCode 软件中打开你的项目工程，在项目根目录增加 `.vscode` 文件夹，里面添加一个 `mcp.json` 文件，在该文件中加入以下内容：
 
 ```json
 {
   "servers": {
     "my-app-mcp-server": {
-      "url": "https://ai.opentiny.design.mcp?sessionId=stream06-1921-4f09-af63-51de410e9e09"
+      "url": "https://ai.opentiny.design/mcp?sessionId=stream06-1921-4f09-af63-51de410e9e09"
     }
   }
 }
 ```
 
-配置完成之后点击 `my-app-mcp-server` 上方的启动按钮，这时你的 Web 应用的 MCP Server 就启动了。
+b. 配置完成之后点击 `my-app-mcp-server` 上方的启动按钮，这时你的 Web 应用的 MCP Server 就启动了。
 
 ![](../assets/images/vscode-copilot/1.png)
 
-然后打开 VSCode Copilot AI 对话框，切换到 Agent 模式。
+c. 然后使用快捷键 Ctrl + Alt + I 打开 VSCode Copilot AI 对话框，切换到 Agent 模式。
 
 ![](../assets/images/vscode-copilot/2.png)
 
-在输入框中输入“帮我选中员工数最多的公司”，这时 AI 就会调用你的 Web 应用中定义的 MCP 工具，操作你的 Web 应用，选中公司列表中员工数最多的公司。
+d. 在输入框中输入需要操作的内容，这时 AI 就会调用你的 Web 应用中定义的 MCP 工具，操作你的 Web 应用，例如帮我选中ID为6的公司,就会调用定义的mcp工具，点击继续按钮
+
+![](../assets/images/vscode-copilot/4.png)
+
+e. 查看是否调用 MCP 工具成功
 
 ![](../assets/images/vscode-copilot/3.png)
 
 ## Cursor
 
-下载软件
+a. 在 https://cursor.com/cn 官网下载Cursor软件
 
 ![](../assets/images/cursor/1.png)
 
-在Cursor中配置mcp servers
-
-ctrl + L 弹出AI对话框，点击设置按钮进行设置
+b. 在Cursor中配置mcp servers ctrl + L 弹出AI对话框，点击设置按钮进行设置 MCP Server 
 
 ![](../assets/images/cursor/2.png)
 
-继续按照下面的步骤手动添加 mcp servers
+c. 按照下面的步骤手动进行手动添加
 
-![](../assets/images/cursor/3.png)
+```json
+{
+  "servers": {
+    "my-app-mcp-server": {
+      "url": "https://ai.opentiny.design/mcp?sessionId=stream06-1921-4f09-af63-51de410e9e09"
+    }
+  }
+}
+```
 
-查看mcp是否配置成功并且进行验证
+d. 查看mcp是否配置成功并且进行验证
 
 ![](../assets/images/cursor/4.png)
 
-新建会话，选择mcp智能体
+e. 新建会话，切换到 Agent 模式，在输入框中输入需要操作的内容，这时 AI 就会调用你的 Web 应用中定义的 MCP 工具，操作你的 Web 应用
 
 ![](../assets/images/cursor/5.png)
 
-验证成功
-
-![](../assets/images/cursor/6.png)
-
 ## Windsurf
 
-下载软件
+a. 在 https://windsurf.com/ 官网下载 Windsurf 软件
 
 ![](../assets/images/windsurf/1.png)
 
-在Windsurf中配置mcp servers
-
-找到windsurf对话框上方的锤子按钮 -> Configure
+b. 在 Windsurf 中配置 mcp servers ，先找到windsurf对话框上方的锤子按钮 
 
 ![](../assets/images/windsurf/2.png)
 
-配置mcp_config.json*文件，格式如图
+c. 配置mcp_config.json*文件，格式如图
 
 ![](../assets/images/windsurf/3.png)
 
-点击Refresh会出现我们的mcp servers
+d. 点击Refresh会出现我们的mcp servers
 
 ![](../assets/images/windsurf/4.png)
 
+
+e. 新建会话，切换到 Agent 模式，在输入框中输入需要操作的内容，这时 AI 就会调用你的 Web 应用中定义的 MCP 工具，操作你的 Web 应用
+
 ![](../assets/images/windsurf/5.png)
-
-验证成功
-
-![](../assets/images/windsurf/6.png)
 
 ## Trae
 
