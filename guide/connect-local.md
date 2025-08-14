@@ -36,7 +36,7 @@ import { onMounted } from 'vue'
 import { WebMcpClient, createMessageChannelClientTransport } from '@opentiny/next-sdk'
 
 onMounted(async () => {
-  // 第二个参数需要保持和 server 端一样的对象引用地址，如果不填默认为当前的 window 对象
+  // 第二个参数需要与服务端保持相同的对象引用,默认为当前 window
   const transport = createMessageChannelClientTransport('endpoint', window.parent)
   const client = new WebMcpClient()
   await client.connect(transport)
