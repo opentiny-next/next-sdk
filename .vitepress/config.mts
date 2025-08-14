@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "OpenTiny NEXT SDK",
   description: "OpenTiny NEXT SDK",
-  base: '/next-sdk/',
+  base: '/next-sdk-docs/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
