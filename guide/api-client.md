@@ -79,7 +79,86 @@ client.connect(clientTransport)
 ```typescript
 client.connect({
   agent: true,
-  url: 'https://ai.opentiny.design/mcp'
+  url: 'https://agent.opentiny.design/api/v1/mcp-proxy-trial/mcp'
+})
+```
+
+固定 sessionId
+
+```typescript
+client.connect({
+  agent: true,
+  url: 'https://agent.opentiny.design/api/v1/mcp-proxy-trial/mcp',
+  sessionId: 'stream06-1921-4f09-af63-51de410e9e09'
+})
+```
+
+默认是通过 Streamable HTTP 方式与 WebAgent 进行连接，也可以通过配置 `type: 'sse'` 使用 SSE 方式进行连接
+
+```typescript
+client.connect({
+  agent: true,
+  type: 'sse',
+  url: 'https://agent.opentiny.design/api/v1/mcp-proxy-trial/sse',
+  sessionId: 'stream06-1921-4f09-af63-51de410e9e09'
+})
+```
+
+通过 authProvider 配置 OAuth 鉴权
+
+```typescript
+const getAuthCodeByState = (url: string | URL, state: string) => {
+  return fetch(callback, {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Bearer ${token}` // token 为设置的请求头 token
+    },
+    body: new URLSearchParams({ state })
+  });
+};
+
+const MY_APP_METADATA = {
+  client_name: 'my-app-client',
+  redirect_uris: ['https://my-app.com/auth/callback'], // redirect_uris 为登录授权之后重定向的地址，一般由业务后端进行实现
+  grant_types: ['authorization_code', 'refresh_token'],
+  response_types: ['code'],
+  token_endpoint_auth_method: 'client_secret_post',
+  scope: 'mcp:web'
+};
+
+const authProvider = new AuthClientProvider({ clientMetadata: MY_APP_METADATA, getAuthCodeByState });
+
+authProvider.saveClientInformation({
+  client_id: clientId, // 在 WebAgent 平台注册应用之后，平台生成的 clientId
+  redirect_uris: MY_APP_METADATA.redirect_uris
+})
+
+client.connect({
+  agent: true,
+  authProvider,
+  url: 'https://agent.opentiny.design/api/v1/mcp-proxy-trial/mcp',
+  sessionId: 'stream06-1921-4f09-af63-51de410e9e09'
+})
+```
+
+回调函数
+
+```typescript
+client.connect({
+  agent: true,
+  url: 'https://agent.opentiny.design/api/v1/mcp-proxy-trial/mcp',
+  sessionId: 'stream06-1921-4f09-af63-51de410e9e09',
+  onError: (error) => {
+    // 自定义错误处理逻辑
+  },
+  onUnauthorized: (error) => {
+    // 自定义未鉴权的逻辑
+  },
+  onReconnect: (error) => {
+    // 自定义重连逻辑
+  },
 })
 ```
 
