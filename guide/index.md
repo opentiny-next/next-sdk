@@ -17,24 +17,12 @@ NEXT SDK 支持通过各种主流 MCP Host 对智能应用进行操控，支持�
 npm i @opentiny/next-sdk
 ```
 
-第二步：创建 WebMcpClient，并与 WebAgent 连接
+第二步：创建 WebMcpServer，并与 ServerTransport 连接
 
 ```typescript
-import { WebMcpClient, createMessageChannelPairTransport } from '@opentiny/next-sdk'
+import { WebMcpServer, createMessageChannelPairTransport, z } from '@opentiny/next-sdk'
 
 const [serverTransport, clientTransport] = createMessageChannelPairTransport()
-const client = new WebMcpClient()
-await client.connect(clientTransport)
-const { sessionId } = await client.connect({
-  agent: true,
-  url: 'https://agent.opentiny.design/mcp'
-})
-```
-
-第三步：创建 WebMcpServer，并与 ServerTransport 连接
-
-```typescript
-import { WebMcpServer } from '@opentiny/next-sdk'
 
 const server = new WebMcpServer()
 
@@ -43,19 +31,57 @@ server.registerTool('demo-tool', {
   description: '一个简单工具',
   inputSchema: { foo: z.string() },
 }, async (params) => {
+  console.log('params:', params)
   return { content: [{ type: 'text', text: `收到: ${params.foo}` }] }
 })
 
-server.connect(serverTransport)
+await server.connect(serverTransport)
 ```
+
+第三步：创建 WebMcpClient，并与 WebAgent 连接
+
+```typescript
+import { WebMcpClient } from '@opentiny/next-sdk'
+
+const client = new WebMcpClient()
+await client.connect(clientTransport)
+const { sessionId } = await client.connect({
+  agent: true,
+  url: 'https://agent.opentiny.design/api/v1/mcp-proxy-trial/mcp',
+  sessionId: '5f8edea7-e3ae-4852-a334-1bb6b3a1cfa9'
+})
+```
+
+完成以上步骤，你的 Web 应用就变成了一个智能应用，就可以被 AI 操控，你可以[通过各类 MCP Host 操控智能应用](./mcp-host.md)。
+
+我们还提供了一个网页版本的 AI 对话框，这个 AI 对话框支持 PC 端和手机端，它就像一个遥控器，你可以通过这个遥控器操控你的 Web 应用。
 
 第四步：引入并使用遥控器：
 
-```typescript
-import { Remoter } from '@opentiny/next-sdk'
+安装遥控器：
+
+```shell
+npm i @opentiny/next-remoter
 ```
 
-完成以上步骤，你的 Web 应用就变成了一个智能应用，并且可以打开遥控器，通过对话方式让 AI 代替你操作 Web 应用，提升完成任务的效率。
+在 App.vue 中使用遥控器：
+
+```vue
+<script setup lang="ts">
+import { TinyRemoter } from '@opentiny/next-remoter'
+import '@opentiny/next-remoter/dist/style.css'
+</script>
+
+<template>
+  <tiny-remoter session-id="5f8edea7-e3ae-4852-a334-1bb6b3a1cfa9" />
+</template>
+```
+
+这时你的 Web 应用右下角会出现一个图标，这就是遥控器的入口，你可以将鼠标悬浮到这个图标上，选择：
+- 弹出 AI 对话框，你的 Web 应用侧边会打开一个 AI 对话框
+- 弹出二维码，手机扫码之后会打开手机端的遥控器
+
+不管是通过弹出 AI 对话框，还是通过手机扫码，你都可以通过对话方式让 AI 代替你操作 Web 应用，提升完成任务的效率。
 
 ## 浏览器直接引入
 
